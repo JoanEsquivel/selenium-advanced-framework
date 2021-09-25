@@ -1,0 +1,13 @@
+How to execute the suite
+
+----------- Default parameters ----------------------
+Command mvn test -DtestngName="testng.xml"
+It will take the configuration default from test/resources/config.properties
+So: Chrome, and default URL
+
+----------- Custom parameters ----------------------
+Imagine that you want to override the Browser, so
+Command: mvn test -DtestngName="testng.xml" -Dbrowser=firefox
+
+Or the URL and Browser
+Command: mvn test -DtestngName="testng.xml" -Dbrowser=firefox -Durl=www.google.com

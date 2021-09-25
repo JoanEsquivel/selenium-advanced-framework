@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo" verbose="5" thread-count="4" parallel="methods">
+    <test name="Demo-TestCases">
+        <classes>
+            <class name="tests.DemoLogin"></class>
+        </classes>
+    </test>
+</suite>
