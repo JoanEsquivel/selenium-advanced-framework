@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class customListener implements ITestListener {
+public class CustomListener implements ITestListener {
 
     static ExtentReports report;
     ExtentTest test;

@@ -4,10 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import utils.PropertiesManager;
+import utils.Wrapper;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class TestBase extends Wrapper {
 
     BrowserFactory bFactory = new BrowserFactory();
 

@@ -1,25 +1,32 @@
 package tests;
 
 import org.testng.annotations.Test;
+import pageObjects.demo.LoginPage;
+import testBase.DriverFactory;
 import testBase.TestBase;
 import utils.PropertiesManager;
 
 public class DemoLogin extends TestBase {
+
+    LoginPage loginPage = new LoginPage();
+
     @Test
     public void successLogin(){
-        System.out.println("Sucess Login Test");
-        System.out.println( PropertiesManager.getPropertyValueByKey("browser"));
+        loginPage.login("standard_user", "secret_sauce");
+
     }
     @Test
     public void lockedUser(){
-        System.out.println("Locked User Test");
+//        System.out.println( PropertiesManager.getPropertyValueByKey("browser"));
+        loginPage.login("locked_out_user", "secret_sauces");
+        isTextCorrect("Epic sadface: Sorry, this user has been locked out.", loginPage.getErrorMessage());
     }
     @Test
     public void wrongUser(){
-        System.out.println("Wrong User Name Test");
+        loginPage.login("wrong_user", "secret_sauce");
     }
     @Test
     public void wrongPassword(){
-        System.out.println("Wrong Password Test");
+        loginPage.login("standard_user", "wrong_password");
     }
 }
